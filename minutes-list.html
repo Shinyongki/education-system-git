@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회의록 목록</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>교육분과 2팀</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#">교육 자료 허브</a></li>
+                    <li><a href="instructor-database.html">강사 데이터베이스</a></li>
+                    <li><a href="#">교육 운영 도구</a></li>
+                    <li><a href="#">교육 우수사례</a></li>
+                    <li><a href="notice-list.html">공지사항</a></li>
+                    <li><a href="agenda-list.html">안건</a></li>
+                    <li><a href="minutes-list.html" class="active">회의록</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="user-btn"><i class="fas fa-user"></i></button>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>회의록 목록</h2>
+            <a href="minutes-register.html" class="btn btn-primary">회의록 등록</a>
+        </div>
+        <form id="minutesSearchForm" class="mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" id="minutesSearchInput" placeholder="요약, 참석자, 등록자, 안건명 검색">
+                <button class="btn btn-outline-secondary" type="submit">검색</button>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="minutesTable">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>안건명</th>
+                        <th>요약</th>
+                        <th>참석자</th>
+                        <th>등록자</th>
+                        <th>등록일</th>
+                        <th>읽음</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS로 동적 렌더링 -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script type="module" src="js/minutes.js"></script>
+</body>
+</html> 

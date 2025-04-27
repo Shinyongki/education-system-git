@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강사 정보 등록 | 교육분과 2팀</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/instructor-list.css">
+    <link rel="stylesheet" href="css/instructor-register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 글로벌 네비게이션 바 -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>교육분과 2팀</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#">교육 자료 허브</a></li>
+                    <li><a href="instructor-database.html">강사 데이터베이스</a></li>
+                    <li><a href="#">교육 운영 도구</a></li>
+                    <li><a href="#">교육 우수사례</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="user-btn"><i class="fas fa-user"></i></button>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="register-section">
+        <div class="container-wide">
+            <form id="instructor-register-form" class="register-form" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <!-- PDF 업로드 섹션 -->
+                    <div class="pdf-upload-section">
+                        <h3><i class="fas fa-file-pdf"></i> 이력서 자동 입력</h3>
+                        <p>PDF 이력서를 업로드하시면 자동으로 양식이 채워집니다.</p>
+                        <div class="file-upload-container">
+                            <input type="file" id="instructor-pdf" name="instructor-pdf" accept=".pdf" class="form-control">
+                            <small class="form-text text-muted">PDF 파일만 업로드 가능합니다.</small>
+                        </div>
+                    </div>
+
+                    <!-- 기본 정보 섹션 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> 기본 정보</h3>
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label for="name">이름<span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">연락처<span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                                <div class="form-text">예: 010-1234-5678</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">이메일<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="organization">소속기관<span class="required">*</span></label>
+                                <input type="text" id="organization" name="organization" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="position">직위/경력<span class="required">*</span></label>
+                                <input type="text" id="position" name="position" class="form-control" required>
+                                <div class="form-text">예: 수석연구원 / 15년 경력</div>
+                            </div>
+                            <div class="form-group">
+                                <label>개인정보 공개 설정</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="privateInfo" value="name">
+                                        이름
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="privateInfo" value="phone">
+                                        연락처
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="privateInfo" value="email">
+                                        이메일
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="instructorBio">강사 소개<span class="required">*</span></label>
+                            <textarea id="instructorBio" name="instructorBio" class="form-control" rows="4" required></textarea>
+                            <div class="form-text">강사님의 주요 경력과 전문성을 소개해주세요.</div>
+                        </div>
+                    </div>
+
+                    <!-- 전문 분야 섹션 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-graduation-cap"></i> 전문 분야</h3>
+                        <div class="form-group">
+                            <label>역량강화교육 - 전담사회복지사 대상</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="caseManagement">사례관리</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="seniorCounseling">노인상담</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="programDev">프로그램 개발/평가</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="administration">행정/회계</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="policy">정책</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="ethics">윤리</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="supervision">슈퍼비전</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="field_sw_etc" id="field_sw_etc">기타</label>
+                            </div>
+                            <div id="field_sw_etc_input" class="form-group" style="display: none;">
+                                <input type="text" id="field_sw_etc_text" name="field_sw_etc_text" class="form-control" placeholder="기타 분야를 입력해주세요">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>심리지원교육</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="burnoutPrevention">소진예방</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="traumaCare">트라우마 관리</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="selfCare">자기돌봄</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="stressManagement">스트레스 관리</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="depressionCare">우울증 관리</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="groupCounseling">집단상담</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="crisisIntervention">위기개입</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="field_psy_etc" id="field_psy_etc">기타</label>
+                            </div>
+                            <div id="field_psy_etc_input" class="form-group" style="display: none;">
+                                <input type="text" id="field_psy_etc_text" name="field_psy_etc_text" class="form-control" placeholder="기타 분야를 입력해주세요">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>역량강화교육 - 생활지원사 대상</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="seniorCommunication">노인 의사소통</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="crisisCare">위기 대응</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="serviceQuality">서비스 제공 매뉴얼</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="ictUsage">ICT 활용</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="dementiaSupport">치매지원</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="emergencyCare">응급처치</label>
+                                <label class="checkbox-label"><input type="checkbox" name="mainFields" value="field_ls_etc" id="field_ls_etc">기타</label>
+                            </div>
+                            <div id="field_ls_etc_input" class="form-group" style="display: none;">
+                                <input type="text" id="field_ls_etc_text" name="field_ls_etc_text" class="form-control" placeholder="기타 분야를 입력해주세요">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialTopics">세부 전문 주제<span class="required">*</span></label>
+                            <textarea id="specialTopics" name="specialTopics" class="form-control" required></textarea>
+                            <div class="form-text">구체적인 강의 가능 주제를 입력해주세요. (예: 노인상담, 소진예방, ICT 활용 등)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teachingScope">교육 범위 및 특징</label>
+                            <textarea id="teachingScope" name="teachingScope" class="form-control"></textarea>
+                            <div class="form-text">
+                                교육 방식(이론/실습/혼합), 교육 대상, 범위, 차별점, 실제 운영 경험 등도 함께 기술해 주세요.<br>
+                                <strong>예시:</strong> 심리지원교육 전반, 상담 실습, 집단상담, 위기개입, 노인상담, 프로그램 개발, 현장실습, 사례관리, 행정/회계, ICT 활용 등.<br>
+                                <span style="color:#888;">(예: "현장 실습 중심의 집단상담 및 위기개입 교육을 주로 진행하며, 노인상담과 프로그램 개발에 특화되어 있습니다. 이론과 실습을 혼합하여 실제 적용력을 높입니다.")</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 강의 특성 섹션 -->
+                    <div class="form-section lecture-features-section">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> 강의 특성</h3>
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label>선호하는 강의 스타일<span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="teachingStyle" value="lecture">
+                                        강의식
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="teachingStyle" value="participatory">
+                                        참여식
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="teachingStyle" value="mixed">
+                                        혼합형
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="style_mixed_input_container" class="form-group" style="display: none;">
+                                <label for="style_mixed_ratio">혼합 비율</label>
+                                <input type="text" id="style_mixed_ratio" name="style_mixed_ratio" class="form-control" placeholder="예: 강의 60% : 참여 40%">
+                            </div>
+                        </div>
+
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label for="optimalSize">최적 교육 인원<span class="required">*</span></label>
+                                <input type="text" id="optimalSize" name="optimalSize" class="form-control" required>
+                                <div class="form-text">예: 15-20명</div>
+                            </div>
+                            <div class="form-group">
+                                <label>선호하는 교수법</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="discussion">토론</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="roleplay">역할극</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="casestudy">사례연구</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="practice">실습</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="lecture">강의식</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="smallgroup">소그룹활동</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="demonstration">시연</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="mentoring">멘토링</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="pedagogyMethods" value="pedagogy_etc" id="pedagogy_etc">기타</label>
+                                </div>
+                                <div id="pedagogy_etc_input" class="form-group" style="display: none;">
+                                    <input type="text" id="pedagogy_etc_text" name="pedagogy_etc_text" class="form-control" placeholder="기타 교수법을 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>선호하는 강의 방식<span class="required">*</span></label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="teachingMethod" value="offline">
+                                    오프라인
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="teachingMethod" value="online">
+                                    온라인
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="teachingMethod" value="hybrid">
+                                    하이브리드
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 강의 이력 섹션 -->
+                    <div class="form-section full-width">
+                        <h3><i class="fas fa-history"></i> 강의 이력</h3>
+                        <div class="lecture-history-grid" id="lectureHistoryInputGrid">
+                            <div class="form-group">
+                                <label>일자</label>
+                                <input type="date" class="form-control" id="input_lecture_date">
+                            </div>
+                            <div class="form-group">
+                                <label>강의 주제</label>
+                                <input type="text" class="form-control" id="input_lecture_topic" placeholder="예: 노인상담">
+                            </div>
+                            <div class="form-group">
+                                <label>교육 대상</label>
+                                <input type="text" class="form-control" id="input_lecture_target" placeholder="예: 전담사회복지사">
+                            </div>
+                            <div class="form-group">
+                                <label>기관명</label>
+                                <input type="text" class="form-control" id="input_lecture_org" placeholder="예: 서울노인복지관">
+                            </div>
+                            <div class="form-group">
+                                <label>인원</label>
+                                <input type="number" class="form-control" id="input_lecture_participants" placeholder="예: 20" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>강의 방식</label>
+                                <input type="text" class="form-control" id="input_lecture_method" placeholder="예: 오프라인">
+                            </div>
+                            <div class="form-group">
+                                <label>강의 시간</label>
+                                <input type="text" class="form-control" id="input_lecture_time" placeholder="예: 2시간">
+                            </div>
+                            <div class="form-group grid-span-2">
+                                <label>강의 개요/주요 내용</label>
+                                <input type="text" class="form-control" id="input_lecture_summary" placeholder="예: 집단상담 실습, 사례분석">
+                            </div>
+                            <div class="form-group grid-span-2">
+                                <label>비고</label>
+                                <input type="text" class="form-control" id="input_lecture_note" placeholder="특이사항(선택)">
+                            </div>
+                        </div>
+                        <button type="button" id="addLectureRow" class="btn btn-secondary" style="margin-top: 12px;">+ 강의 추가</button>
+                        <div class="lecture-history-table-container">
+                            <table class="lecture-history-table" id="lectureHistoryTable">
+                                <thead>
+                                    <tr>
+                                        <th>일자</th>
+                                        <th>강의 주제</th>
+                                        <th>교육 대상</th>
+                                        <th>기관명</th>
+                                        <th>인원</th>
+                                        <th>강의 방식</th>
+                                        <th>강의 시간</th>
+                                        <th>강의 개요/주요 내용</th>
+                                        <th>비고</th>
+                                        <th>관리</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lectureHistoryTableBody">
+                                    <!-- JS로 행이 추가됨 -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="historyNote">강의 이력 참고사항</label>
+                            <textarea id="historyNote" name="historyNote" class="form-control"></textarea>
+                            <div class="form-text">강의 이력에 대한 추가적인 설명이나 특이사항을 입력해주세요.</div>
+                        </div>
+                    </div>
+
+                    <!-- 종합 평가 섹션 -->
+                    <div class="form-section full-width">
+                        <h3><i class="fas fa-star"></i> 종합 평가</h3>
+                        <div class="evaluation-grid">
+                            <div class="rating-card">
+                                <div class="rating-label">강의 만족도</div>
+                                <select class="form-control rating-value" name="satisfaction_rating">
+                                    <option value="">선택</option>
+                                    <option value="5">5점</option>
+                                    <option value="4">4점</option>
+                                    <option value="3">3점</option>
+                                    <option value="2">2점</option>
+                                    <option value="1">1점</option>
+                                </select>
+                            </div>
+                            <div class="rating-card">
+                                <div class="rating-label">전문성</div>
+                                <select class="form-control rating-value" name="expertise_rating">
+                                    <option value="">선택</option>
+                                    <option value="5">5점</option>
+                                    <option value="4">4점</option>
+                                    <option value="3">3점</option>
+                                    <option value="2">2점</option>
+                                    <option value="1">1점</option>
+                                </select>
+                            </div>
+                            <div class="rating-card">
+                                <div class="rating-label">교수법</div>
+                                <select class="form-control rating-value" name="pedagogy_rating">
+                                    <option value="">선택</option>
+                                    <option value="5">5점</option>
+                                    <option value="4">4점</option>
+                                    <option value="3">3점</option>
+                                    <option value="2">2점</option>
+                                    <option value="1">1점</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label for="overallEvaluation">담당자 종합 평가<span class="required">*</span></label>
+                                <textarea id="overallEvaluation" name="overallEvaluation" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="strengthsWeaknesses">강점 및 개선점</label>
+                                <textarea id="strengthsWeaknesses" name="strengthsWeaknesses" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label for="recommendingAgency">추천기관<span class="required">*</span></label>
+                                <input type="text" id="recommendingAgency" name="recommendingAgency" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="recommender">추천 담당자<span class="required">*</span></label>
+                                <input type="text" id="recommender" name="recommender" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>재초빙 추천도</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="recommendationLevel" value="high">
+                                    적극 추천
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="recommendationLevel" value="medium">
+                                    추천
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="recommendationLevel" value="low">
+                                    보류
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackSummary">교육생 피드백 요약</label>
+                            <textarea id="feedbackSummary" name="feedbackSummary" class="form-control"></textarea>
+                            <div class="form-text">교육생들의 주요 피드백을 요약해서 입력해주세요.</div>
+                        </div>
+                    </div>
+
+                    <!-- 비용 및 일정 섹션 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> 비용 및 일정</h3>
+                        <div class="form-group">
+                            <label for="feeBasis">강사비 기준<span class="required">*</span></label>
+                            <input type="text" id="feeBasis" name="feeBasis" class="form-control" required>
+                            <div class="form-text">예: 시간당 25만원, 하루 최대 4시간</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>강의 가능 요일/시간</label>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>요일</th>
+                                        <th>가능 여부</th>
+                                        <th>시작 시간</th>
+                                        <th>종료 시간</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>월요일</td>
+                                        <td>
+                                            <input type="checkbox" class="day-available" id="day_mon">
+                                        </td>
+                                        <td><input type="time" name="time_mon_start" class="form-control" disabled></td>
+                                        <td><input type="time" name="time_mon_end" class="form-control" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>화요일</td>
+                                        <td>
+                                            <input type="checkbox" class="day-available" id="day_tue">
+                                        </td>
+                                        <td><input type="time" name="time_tue_start" class="form-control" disabled></td>
+                                        <td><input type="time" name="time_tue_end" class="form-control" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>수요일</td>
+                                        <td>
+                                            <input type="checkbox" class="day-available" id="day_wed">
+                                        </td>
+                                        <td><input type="time" name="time_wed_start" class="form-control" disabled></td>
+                                        <td><input type="time" name="time_wed_end" class="form-control" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>목요일</td>
+                                        <td>
+                                            <input type="checkbox" class="day-available" id="day_thu">
+                                        </td>
+                                        <td><input type="time" name="time_thu_start" class="form-control" disabled></td>
+                                        <td><input type="time" name="time_thu_end" class="form-control" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>금요일</td>
+                                        <td>
+                                            <input type="checkbox" class="day-available" id="day_fri">
+                                        </td>
+                                        <td><input type="time" name="time_fri_start" class="form-control" disabled></td>
+                                        <td><input type="time" name="time_fri_end" class="form-control" disabled></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label>출장 가능 지역</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="gyeongnam">경남</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="gyeongbuk">경북</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="gwangju">광주</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="daegu">대구</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="busan">부산</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="ulsan">울산</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="jeonnam">전남</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="jeonbuk">전북</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="regions" value="region_etc" id="region_etc">기타</label>
+                                </div>
+                                <div id="region_etc_input" class="form-group" style="display: none;">
+                                    <input type="text" id="region_etc_text" name="region_etc_text" class="form-control" placeholder="기타 지역을 입력해주세요">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="regionNote">지역 관련 참고사항</label>
+                                <textarea id="regionNote" name="regionNote" class="form-control"></textarea>
+                                <div class="form-text">숙박 필요, 교통비 지원 필요 등의 참고사항을 입력해주세요.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 강의 자료 섹션 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-alt"></i> 강의 자료</h3>
+                        <div class="form-group">
+                            <label for="materialsList">보유 강의자료 목록<span class="required">*</span></label>
+                            <textarea id="materialsList" name="materialsList" class="form-control" required rows="4"></textarea>
+                            <div class="form-text">보유하고 계신 강의자료 목록을 상세히 입력해주세요. (예: 1. 강의 교재 및 실습 자료, 2. 워크북, 3. 실습용 데이터셋)</div>
+                        </div>
+
+                        <div class="section-grid">
+                            <div class="form-group">
+                                <label for="sampleLecture">샘플 강의안</label>
+                                <input type="file" id="sampleLecture" name="sampleLecture" accept=".pdf,.doc,.docx,.ppt,.pptx" class="form-control">
+                                <div class="form-text">PDF, Word, PowerPoint 파일 가능 (최대 10MB)</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="worksheets">워크시트/활동지</label>
+                                <input type="file" id="worksheets" name="worksheets" accept=".pdf,.doc,.docx" class="form-control">
+                                <div class="form-text">PDF, Word 파일 가능 (최대 5MB)</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>자료 공유 동의</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="sharingConsent" value="yes">
+                                    전체 동의
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="sharingConsent" value="conditional">
+                                    조건부 동의
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="sharingConsent" value="no">
+                                    비동의
+                                </label>
+                            </div>
+                        </div>
+                        <div id="sharing_conditions" class="form-group" style="display: none;">
+                            <label for="sharingConditionsText">자료 공유 조건</label>
+                            <textarea id="sharingConditionsText" name="sharingConditionsText" class="form-control"></textarea>
+                            <div class="form-text">자료 공유에 대한 조건을 상세히 입력해주세요.</div>
+                        </div>
+                    </div>
+
+                    <!-- 개인정보 동의 섹션 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-shield-alt"></i> 개인정보 수집 및 이용 동의</h3>
+                        <div class="form-group">
+                            <div class="privacy-terms">
+                                <h4>개인정보 수집 및 이용 목적</h4>
+                                <p>강사 등록 및 관리, 강의 매칭, 강사료 지급, 강의 평가 등을 위해 개인정보를 수집 및 이용합니다.</p>
+                                
+                                <h4>수집하는 개인정보 항목</h4>
+                                <ul>
+                                    <li>필수항목: 이름, 연락처, 이메일, 소속기관, 직위/경력</li>
+                                    <li>선택항목: 프로필 사진, 강의자료, 강의이력</li>
+                                </ul>
+                                
+                                <h4>개인정보 보유 및 이용기간</h4>
+                                <p>강사 등록 후 2년간 보관하며, 법령에서 정한 기간 동안 보관이 필요한 경우 해당 기간 동안 보관됩니다.</p>
+                            </div>
+                            <label class="checkbox-label mt-3">
+                                <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                                위 개인정보 수집 및 이용에 동의합니다.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="instructor-database.html" class="btn btn-secondary">취소</a>
+                    <button type="submit" class="btn btn-primary">등록하기</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 교육분과 2팀. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/instructor-register.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 

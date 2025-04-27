@@ -1,0 +1,21 @@
+<!-- 강사 목록 섹션 -->
+<section class="instructor-list py-5">
+    <div class="container">
+        <h2 class="section-title mb-4">강사 목록</h2>
+        
+        <!-- 강사 등록 버튼 -->
+        <div class="instructor-register-link mb-4">
+            <a href="instructor-register.html" class="btn btn-primary">강사 등록하기</a>
+        </div>
+        
+        <!-- 강사 목록 상단: 총 인원수 및 정렬 -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div><strong>총 <span style="color:#2d8cf0">10</span>명의 강사가 있습니다.</strong></div>
+            <select class="form-select w-auto" style="min-width:120px;">
+                <option>추천순</option>
+                <option>평점순</option>
+                <option>리뷰순</option>
+            </select>
+        </div>
+        <!-- 강사 카드 목록 -->
+        <div id="instructorList" class="row row-cols-1 row-cols-md-3 g-4"></div>

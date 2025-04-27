@@ -1,0 +1,131 @@
+/* 강사 카드 스타일 */
+#instructorList {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructor-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 20px 20px 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: none;
+    width: 100%;
+}
+
+.instructor-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.instructor-card img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    border: 2px solid #e0e0e0;
+    background: #f8f8f8;
+}
+
+.instructor-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.instructor-card .mb-1,
+.instructor-card .mb-2 {
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.instructor-card .text-muted {
+    color: #888 !important;
+}
+
+.instructor-card .text-warning {
+    color: #f7b500 !important;
+    font-size: 1.1em;
+}
+
+.instructor-card .btn.detail-btn {
+    margin-top: 10px;
+    background: #1a7f5a;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 6px 18px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.instructor-card .btn.detail-btn:hover {
+    background: #145c3a;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    #instructorList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .instructor-card {
+        width: 100%;
+    }
+}
+
+/* 검색 컨테이너 스타일 */
+.search-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 20px 20px 20px;
+    margin-bottom: 32px;
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.dashboard-btn {
+    background: #1a7f5a;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dashboard-btn:hover {
+    background: #145c3a;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.dashboard-btn i {
+    font-size: 1.1rem;
+} 

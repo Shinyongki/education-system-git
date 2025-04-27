@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 등록/수정</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>공지사항 등록/수정</h1>
+        </div>
+    </header>
+    <main class="container my-5">
+        <form id="noticeForm">
+            <div class="mb-3">
+                <label for="title" class="form-label">제목</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">내용</label>
+                <textarea class="form-control" id="content" name="content" rows="6" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="createdBy" class="form-label">작성자</label>
+                <input type="text" class="form-control" id="createdBy" name="createdBy" required>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">첨부파일명(선택)</label>
+                <input type="text" class="form-control" id="file" name="file" placeholder="예: notice202406.pdf">
+            </div>
+            <button type="submit" class="btn btn-primary">저장</button>
+            <a href="notice-list.html" class="btn btn-secondary ms-2">목록</a>
+        </form>
+    </main>
+    <script src="js/notice.js"></script>
+</body>
+</html> 

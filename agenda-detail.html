@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안건 상세</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>안건 상세</h1>
+        </div>
+    </header>
+    <main class="container my-5">
+        <div id="agendaDetailBox" class="mb-4"></div>
+        <div id="agendaFileBox" class="mb-4"></div>
+        <div>
+            <a href="agenda-list.html" class="btn btn-secondary">목록</a>
+            <a href="#" id="editBtn" class="btn btn-primary">수정</a>
+            <button id="deleteBtn" class="btn btn-danger">삭제</button>
+        </div>
+        <hr>
+        <section id="discussionSection" class="mt-5">
+            <h3>토의</h3>
+            <ul id="discussionList" class="list-group mb-3"></ul>
+            <form id="discussionForm" class="mb-3">
+                <div class="mb-2">
+                    <input type="text" class="form-control" id="discussionAuthor" placeholder="이름" required>
+                </div>
+                <div class="mb-2">
+                    <textarea class="form-control" id="discussionContent" rows="2" placeholder="의견을 입력하세요" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">의견 등록</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/agenda.js"></script>
+</body>
+</html> 

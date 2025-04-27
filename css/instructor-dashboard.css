@@ -1,0 +1,252 @@
+/* 대시보드 섹션 스타일 */
+.dashboard-section {
+    padding: 24px 0;
+    background-color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 카드 스타일 */
+.dashboard-section .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.dashboard-section .card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    transform: translateY(-4px);
+}
+
+.dashboard-section .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 24px 20px;
+    border-radius: 16px 16px 0 0;
+}
+
+.dashboard-section .card-title {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* 알림 스타일 */
+.dashboard-section .notification-item {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.dashboard-section .notification-item:hover {
+    background-color: #f8f8f8;
+    transform: translateX(4px);
+}
+
+.dashboard-section .notification-item.unread {
+    background-color: #f8f8f8;
+    border-left: 4px solid #1a7f5a;
+}
+
+.dashboard-section .notification-item h6 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.dashboard-section .notification-item small {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* 통계 카드 스타일 */
+.dashboard-section .stats-card {
+    text-align: center;
+    padding: 24px 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.dashboard-section .stats-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    transform: translateY(-4px);
+}
+
+.dashboard-section .stats-card h6 {
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.dashboard-section .stats-card .display-4 {
+    color: #1a7f5a;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* 차트 컨테이너 스타일 */
+.chart-container {
+    position: relative;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    height: 300px;
+    margin-bottom: 16px;
+}
+
+.chart-container h6 {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: calc(100% - 2rem) !important;
+}
+
+/* 수정 이력 테이블 스타일 */
+.dashboard-section .table {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.dashboard-section .table th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: 700;
+    padding: 16px 20px;
+    border-bottom: 2px solid #1a7f5a;
+}
+
+.dashboard-section .table td {
+    padding: 16px 20px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.dashboard-section .table tr:hover {
+    background-color: #f8f8f8;
+}
+
+/* 버튼 스타일 */
+.dashboard-section .btn {
+    background: #1a7f5a;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.dashboard-section .btn:hover {
+    background: #145c3a;
+    color: #fff;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .dashboard-section {
+        padding: 16px 0;
+    }
+    
+    .dashboard-section .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .dashboard-section .notification-item h6 {
+        font-size: 1rem;
+    }
+    
+    .dashboard-section .stats-card {
+        padding: 16px;
+    }
+    
+    .dashboard-section .stats-card .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+        padding: 12px;
+    }
+    
+    .chart-container h6 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .dashboard-section .table {
+        font-size: 1rem;
+    }
+    
+    .dashboard-section .table th,
+    .dashboard-section .table td {
+        padding: 12px 16px;
+    }
+}
+
+.header-content {
+    position: relative;
+    padding: 20px 0;
+}
+
+.back-button {
+    margin-bottom: 16px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a7f5a;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: #fff;
+    border: 1px solid #1a7f5a;
+    font-size: 0.9rem;
+}
+
+.btn-back:hover {
+    background: #1a7f5a;
+    color: #fff;
+    transform: translateX(-4px);
+}
+
+.btn-back i {
+    font-size: 0.9rem;
+}
+
+/* 카드 헤더 내 버튼 위치 조정 */
+.card-header.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.card-header .card-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.title-section {
+    margin-top: 8px;
+}
+
+.title-section h2 {
+    margin-bottom: 8px;
+} 
